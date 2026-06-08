@@ -29,4 +29,10 @@ test('Login with existing user', async ({ page }) => {
     await logoutLink.click();
     await expect(page.getByRole('button', { name: 'Log In' })).toBeVisible();
   };
+  const newAccountLink = page.getByRole('link', { name: 'Open New Account' });
+  await expect(newAccountLink).toBeVisible();
+  if (await newAccountLink.isVisible()) {
+    await newAccountLink.click();
+    await expect(page.getByRole('button', { name: 'Open New Account' })).toBeVisible();
+  };
 });
