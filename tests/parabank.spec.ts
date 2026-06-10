@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
 
-//   await page.getByRole('button', { name: 'Register' }).click();
 test('Register new user', async ({ page }) => {
   await page.goto('https://parabank.parasoft.com/parabank/index.htm');  
   await expect(page).toHaveTitle(/ParaBank|Welcome/);
